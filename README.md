@@ -7,7 +7,7 @@ Aplicativo pra pedido de FastFood criado pelo [DesignAvenger](https://thedesigna
 </p>
 
 ## Vídeos
-- Em breve
+- [Vídeo no Youtube](https://youtu.be/Eb7TEtYP6Hk)
 
 ## Requisitos
 - iOS 14

@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct ContentView: View {
-    var padding: CGFloat = 45
-    var spacing: CGFloat = 25
-    var screenWidth = UIScreen.main.bounds.width - 90 // 2 * padding
+    let padding: CGFloat = 45
+    let screenWidth = UIScreen.main.bounds.width
+    let cardWidth = UIScreen.main.bounds.width - 90 // 2 * padding
+    let spacing: CGFloat = 30
     
     @State var xOffset: CGFloat = 0
     @State var currentPage = 0
@@ -23,16 +24,16 @@ struct ContentView: View {
             
             GeometryReader { reader in
                 HStack(spacing: spacing) {
-                    ForEach(0 ..< 5) { i in
+                    ForEach(0 ..< data.count) { i in
                         CardView(item: data[i])
-                            .frame(width: screenWidth)
-                            .animation(.default)
                             .offset(y: i == currentPage ? 0 : 40)
-                            .ignoresSafeArea(.all, edges: .bottom)
+                            .animation(.default)
+                            .frame(width: cardWidth)
                     }
                 }
-                .offset(x: xOffset)
                 .padding(.horizontal, padding)
+                .offset(x: xOffset)
+                .ignoresSafeArea(.all, edges: .bottom)
             }
             .gesture(
                 DragGesture()
@@ -62,8 +63,8 @@ struct ContentView: View {
                 
                 Button(action: {}, label: {
                     Text("Order from here")
-                        .foregroundColor(.white)
                         .fontWeight(.semibold)
+                        .foregroundColor(.white)
                         .frame(width: 280, height: 60)
                         .background(Capsule().fill(Color.black))
                 })
@@ -72,20 +73,20 @@ struct ContentView: View {
     }
     
     func onChanged(value: DragGesture.Value) {
-        xOffset = value.translation.width - (screenWidth * CGFloat(currentPage)) - (spacing * CGFloat(currentPage))
+        xOffset = value.translation.width - (cardWidth * CGFloat(currentPage)) - (spacing * CGFloat(currentPage))
     }
     
     func onEnded(value: DragGesture.Value) {
-        if -value.translation.width > screenWidth / 2 && currentPage < data.count - 1 {
+        if -value.translation.width > cardWidth / 2 && currentPage < data.count - 1 {
             currentPage += 1
         } else {
-            if value.translation.width > screenWidth / 2 && currentPage > 0 {
+            if value.translation.width > cardWidth / 2 && currentPage > 0 {
                 currentPage -= 1
             }
         }
         
         withAnimation {
-            xOffset = -screenWidth * CGFloat(currentPage) - (spacing * CGFloat(currentPage))
+            xOffset = -cardWidth * CGFloat(currentPage) - (spacing * CGFloat(currentPage))
         }
     }
 }
@@ -115,7 +116,7 @@ struct CardView: View {
                     .background(item.color)
                     .cornerRadius(20)
                 
-                Text("McDonalds")
+                Text("McDonald's")
                     .font(.title)
                     .fontWeight(.bold)
                 
@@ -124,7 +125,7 @@ struct CardView: View {
                         Image(systemName: "star.fill")
                             .resizable()
                             .frame(width: 12, height: 12)
-                            .foregroundColor(Color(#colorLiteral(red: 0.9463307261, green: 0.5541427135, blue: 0.110545136, alpha: 1)))
+                            .foregroundColor(Color(#colorLiteral(red: 0.9463456273, green: 0.5541138649, blue: 0.119739227, alpha: 1)))
                         
                         Text("4.8")
                     }
@@ -145,7 +146,6 @@ struct CardView: View {
                         Text("$")
                             .foregroundColor(.gray)
                     }
-                    
                 }
                 
                 Text("10 - 15 min")
@@ -157,7 +157,7 @@ struct CardView: View {
             }
             .padding(25)
             .background(Color.white)
-            .cornerRadius(30)
+            .cornerRadius(20)
         }
     }
 }
