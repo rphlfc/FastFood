@@ -11,6 +11,8 @@
 		3D1F35BE2669835A001DED5E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1F35BD2669835A001DED5E /* ContentView.swift */; };
 		3D1F35C02669835B001DED5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D1F35BF2669835B001DED5E /* Assets.xcassets */; };
 		3D1F35C32669835B001DED5E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D1F35C22669835B001DED5E /* Preview Assets.xcassets */; };
+		3D1F35CC26698381001DED5E /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1F35CB26698381001DED5E /* Item.swift */; };
+		3D1F35CE2669A08C001DED5E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3D1F35CD2669A08C001DED5E /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,8 @@
 		3D1F35BF2669835B001DED5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3D1F35C22669835B001DED5E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3D1F35C42669835B001DED5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3D1F35CB26698381001DED5E /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		3D1F35CD2669A08C001DED5E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +40,7 @@
 		3D1F35AF2669835A001DED5E = {
 			isa = PBXGroup;
 			children = (
+				3D1F35CD2669A08C001DED5E /* README.md */,
 				3D1F35BA2669835A001DED5E /* FastFood */,
 				3D1F35B92669835A001DED5E /* Products */,
 			);
@@ -52,6 +57,7 @@
 		3D1F35BA2669835A001DED5E /* FastFood */ = {
 			isa = PBXGroup;
 			children = (
+				3D1F35CA2669836F001DED5E /* Model */,
 				3D1F35BB2669835A001DED5E /* FastFoodApp.swift */,
 				3D1F35BD2669835A001DED5E /* ContentView.swift */,
 				3D1F35BF2669835B001DED5E /* Assets.xcassets */,
@@ -67,6 +73,14 @@
 				3D1F35C22669835B001DED5E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		3D1F35CA2669836F001DED5E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3D1F35CB26698381001DED5E /* Item.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,6 +140,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D1F35CE2669A08C001DED5E /* README.md in Resources */,
 				3D1F35C32669835B001DED5E /* Preview Assets.xcassets in Resources */,
 				3D1F35C02669835B001DED5E /* Assets.xcassets in Resources */,
 			);
@@ -139,6 +154,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D1F35BE2669835A001DED5E /* ContentView.swift in Sources */,
+				3D1F35CC26698381001DED5E /* Item.swift in Sources */,
 				3D1F35BC2669835A001DED5E /* FastFoodApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
